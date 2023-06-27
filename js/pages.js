@@ -75,8 +75,9 @@ function addToCart(e){
 
                 cart.push({
                     ...item,
-                    numberOfUnits : 1,
+                    numberOfUnits : totalCount,
                 });
+                
             }
             updateCart();
 

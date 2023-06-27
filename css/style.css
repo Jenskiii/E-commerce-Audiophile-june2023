@@ -408,6 +408,10 @@ button, a{
     margin: 25px 0;
 }
 
+.showcase__zx9--wrapper{
+    position: relative;
+    z-index: 1;
+}
 .showcase__background{
     display: grid;
     place-items: center;
@@ -419,6 +423,7 @@ button, a{
     max-width: 100%;
     z-index: 1;
 }
+
 
 .showcase__title--black{
     font-size: 1.75rem;
@@ -761,6 +766,7 @@ button, a{
         transform: translateX(-80px);
         width: 80%;
     }
+
 
     .showcase__column{
         width: 50%;
