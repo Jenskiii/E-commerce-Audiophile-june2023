@@ -266,6 +266,7 @@ button, a{
 }
 
 
+
 .overlay{
     position: fixed;
     width: 100vw;
@@ -379,17 +380,21 @@ button, a{
     flex-direction: column;
     align-items: center;
     text-align: center;
-    
+    position: relative;
+    z-index: 0;
 }
 
 .showcase__zx9--img img{
     margin: 51px 0 39px 0;
     max-width: 140px;
+    position: relative;
+    z-index: 2;
 }
 
 .showcase__zx9--title,
 .showcase__zx9--text{
     color: white;
+    z-index: 1;
 }
 
 .showcase__zx9--title{
@@ -401,6 +406,18 @@ button, a{
 .showcase__zx9--text{
     opacity: .75;
     margin: 25px 0;
+}
+
+.showcase__background{
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+.showcase__zx9--circles{
+    transform: translatey(-115px);
+    position: absolute;
+    max-width: 100%;
+    z-index: 1;
 }
 
 .showcase__title--black{
@@ -596,6 +613,9 @@ button, a{
         margin: 25px auto 40px auto;
     }
 
+    .showcase__zx9--circles{
+        transform: translatey(-185px);
+    }
     .showcase__yx1--info{
         padding-top: 100px;
     }
@@ -734,6 +754,12 @@ button, a{
         flex-direction: row;
         text-align: left;
         overflow: hidden;
+    }
+
+    .showcase__zx9--circles{
+        transform: translateY(-60px);
+        transform: translateX(-80px);
+        width: 80%;
     }
 
     .showcase__column{
