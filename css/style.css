@@ -209,6 +209,23 @@ button, a{
     opacity: .5;
 }
 
+.cart__counter{
+    display: grid;
+    place-items: center;
+    transform: translateX(-10px);
+    transform: translateY(-25px);
+    color: white;
+    width: 24px;
+    height: 24px;
+    background-color: #D87D4A;
+    border-radius: 8px;
+    visibility: hidden;
+}
+
+.cart{
+    display: flex;
+}
+
 .shoppingcart__item{
     display: flex;
     align-items: center;

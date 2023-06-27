@@ -65,7 +65,6 @@ function decreaseCounter(){
 function addToCart(e){
     //get id of product
     let id = e.target.id;
-
     fetch("../data.json")
     .then(res => res.json())
         .then(data =>{
@@ -89,12 +88,16 @@ function addToCart(e){
 
 // render subtotal
   function  renderSubTotal(){
+    //counter for shopping cart showing on real pagr
+    const cartItems = document.querySelector(".cart__counter");
+    
     let totalItems = 0;
     let totalPrice = 0;
     let shipping = 50;
     let VAT = 0;
     let grandTotal = 0;
     let firstItem =  0
+
     //sums up all prcies from products added to cart
     cart.forEach((item) =>{
         totalPrice += item.price  * item.numberOfUnits;
@@ -113,11 +116,21 @@ function addToCart(e){
     localStorage.setItem("totalItems", JSON.stringify(totalItems));
     localStorage.setItem("firstCartItem", JSON.stringify(firstItem));
 
-    
-
+    // updates counter that displays cart items
+    cartItems.innerHTML = totalItems;
+    if(totalItems >= 1){
+        cartItems.style.visibility = "visible"
+    }else{
+        cartItems.style.visibility = "hidden"
+    }
     // updates price on all pages
     subTotal.forEach( e => e.innerHTML = totalPrice);
     amount.innerHTML = " " + totalItems;
+  }
+
+
+  function showItemsInCart(){
+    cartItems.style.visibility = "none"
   }
 
 //render cart items
