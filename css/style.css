@@ -94,6 +94,7 @@ button, a{
 
 .button__orange{
     background-color: #D87D4A;
+    color: white;
 }
 
 .button__orange a{

@@ -90,8 +90,6 @@ function validateForm(){
         checkZipCode(); checkCity();
         checkCountry(); checkEmoneyNumber();
         checkEmoneyPin();
-        orderMenu.style.display = "none"
-        overlay.style.display = "none"
     }
     }
 
