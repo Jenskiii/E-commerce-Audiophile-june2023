@@ -159,7 +159,7 @@ function checkCountry(){
 }
 // emoney number input
 function checkEmoneyNumber(){
-    if (inputs[9].value.match(/^\d+$/) && inputs[9].value.length === 9){
+    if (inputs[9].value.match(/^\d+$/) && inputs[9].value.length === 9 || inputs[8].checked === true){
     removeError(9,7)
     return true
     }else{
@@ -168,7 +168,7 @@ function checkEmoneyNumber(){
 }
 // emoney pin input
 function checkEmoneyPin(){
-    if (inputs[10].value.match(/^\d+$/) && inputs[10].value.length === 4){
+    if (inputs[10].value.match(/^\d+$/) && inputs[10].value.length === 4 || inputs[8].checked === true){
     removeError(10,8)
     return true
     }else{
@@ -187,3 +187,30 @@ function removeError(input,error){
     inputs[input].style.borderColor = "";
     errorMessage[error].style.display = "none";
 }
+
+
+// updates order menu on checkout page
+updateOrderPage()
+//update order menu
+function updateOrderPage(){
+    let cart = JSON.parse(localStorage.getItem("CART")) || [];
+    let orderProduct = document.querySelector(".order__product");
+    if(cart.length >= 1){
+    orderProduct.innerHTML = `
+    <div class="shoppingcart__item order__cart--item">
+     <div class="shoppingcart__row">
+         <img src="${cart[0].cartImage}" alt="" class="shoppingcart__img" onclick="removeItemFromCart(${cart[0].id})">
+         <div class="shoppingcart__price--wrapper">
+         <h2 class="shoppingcart__title">${cart[0].name}</h2>
+         <h3 class="shoppingcart__price">$ ${cart[0].price}</h3>
+         </div>
+     </div>
+ 
+         <div class="quantity__counter shoppingcart__counter">
+         <p class="number"> x${cart[0].numberOfUnits}</p>
+         </div>  
+      </div>`
+    }else{
+        orderProduct.innerHTML = "";
+    }
+    }

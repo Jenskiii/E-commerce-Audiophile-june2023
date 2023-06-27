@@ -97,24 +97,14 @@ button, a{
     color: white;
 }
 
-.button__orange a{
-    color: white;
-}
-
 .button__transparent{
     border: solid 1px #000000;
     padding: 14px 25px;
-}
-
-.button__link--transparent{
     color: #000000;
 }
 
 .button__black{
     background-color: #000000;
-}
-
-.button__link--black{
     color: white;
 }
 
@@ -859,23 +849,14 @@ button, a{
 .button__transparent:hover{
     background-color: black;
     transition: ease-in .2s;
-}
-
-.button__transparent:hover a{
     color: white;
-    transition: ease-in .2s;
 }
 
 .button__transparent:active{
     background-color: black;
     transition: ease-in .2s;
-}
-
-.button__transparent:active a{
     color: white;
-    transition: ease-in .2s;
 }
-
 
 .socials__logo:hover path,
 .footer__logo:hover path,

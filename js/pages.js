@@ -21,8 +21,7 @@ let navAmount = document.querySelector(".nav__cart--total");
 // get cart from local storage + update
 let cart = JSON.parse(localStorage.getItem("CART")) || [];
 updateCart();
-// updates order menu on checkout page
-updateOrderPage();
+
 
 //adds event to all add to cart buttons
 addToCartButton.forEach(e => {
@@ -32,29 +31,6 @@ addToCartButton.forEach(e => {
 clearCartButton.forEach(e =>{
 e.addEventListener("click", emptyCart);
 })
-
-
-//update order menu
-function updateOrderPage(){
-   const orderProduct = document.querySelector(".order__product");
-
-    if(cart.length > 0){
-   orderProduct.innerHTML = `
-   <div class="shoppingcart__item order__cart--item">
-    <div class="shoppingcart__row">
-        <img src="${cart[0].cartImage}" alt="" class="shoppingcart__img" onclick="removeItemFromCart(${cart[0].id})">
-        <div class="shoppingcart__price--wrapper">
-        <h2 class="shoppingcart__title">${cart[0].name}</h2>
-        <h3 class="shoppingcart__price">$ ${cart[0].price}</h3>
-        </div>
-    </div>
-
-        <div class="quantity__counter shoppingcart__counter">
-        <p class="number"> x${cart[0].numberOfUnits}</p>
-        </div>  
-     </div>` || " "
-   }}
-
 
 // select plus/minus counter from product pages
 const minusButton = document.querySelectorAll(".minus");
@@ -201,8 +177,6 @@ function changeNumberOfUnits(action, id){
             numberOfUnits,
         };
     });
-    
-    
     updateCart();
 }
 
@@ -223,9 +197,11 @@ function previousPage(){
 function updateCart(){
     renderCartItems();
     renderSubTotal();
-
     // save cart to local storage
     localStorage.setItem("CART", JSON.stringify(cart));
 }
 
+
+
+ 
 
