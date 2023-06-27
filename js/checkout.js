@@ -16,8 +16,8 @@ const grandTotalHTML = document.querySelector(".cart__grandtotal");
 const vatHTML = document.querySelector(".cart__total--vat");
 
 // if cart changes prices gets updated
+updatePrice();
 document.addEventListener("click", updatePrice);
-document.addEventListener("load", updatePrice);
 
 const backToMain = document.querySelector(".backToHome")
 backToMain.addEventListener("click", backToMainPage)
