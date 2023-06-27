@@ -21,8 +21,7 @@ let navAmount = document.querySelector(".nav__cart--total");
 // get cart from local storage + update
 let cart = JSON.parse(localStorage.getItem("CART")) || [];
 updateCart();
-
-
+amount
 //adds event to all add to cart buttons
 addToCartButton.forEach(e => {
     e.addEventListener("click", addToCart);
@@ -117,9 +116,9 @@ function addToCart(e){
     localStorage.setItem("firstCartItem", JSON.stringify(firstItem));
 
     // updates counter that displays cart items
-    cartItems.innerHTML = totalItems;
+    cartItems.style.visibility = "visible"
     if(totalItems >= 1){
-        cartItems.style.visibility = "visible"
+        cartItems.innerHTML = totalItems;
     }else{
         cartItems.style.visibility = "hidden"
     }
